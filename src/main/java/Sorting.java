@@ -1,21 +1,25 @@
+import testing.TestCaseBuilder;
 import java.util.Arrays;
-import java.util.Random;
 
 public class Sorting {
 
     public static void test(int cases, long seed){
-        System.out.println("Random cases");
-
-        Random random = new Random(seed);
-
+        System.out.println("Sorting test cases");
+        int[][][] tests = TestCaseBuilder.sortedArrays(cases, seed);
+        int testsPassed = 0;
         for (int i = 0; i < cases; i++){
-            int size = random.nextInt(10) + 1;
-            int[] arr = new int[size];
-            for (int j = 0; j < size; j++){
-                arr[j] = random.nextInt(200) - 100;
+            boolean passed = Arrays.equals(tests[1][i], testsort(tests[0][i]));
+            if (passed){
+                testsPassed++;
+            } else {
+                System.out.printf("Expected: %s Output: %s%n", Arrays.toString(tests[1][i]), Arrays.toString(testsort(tests[0][i])));
             }
-            System.out.printf("%s --> %s%n", Arrays.toString(arr), Arrays.toString(Sorting.mergesort(arr)));
         }
+        System.out.printf("Passed: %d/%d%n", testsPassed, cases);
+    }
+
+    private static int[] testsort(int[] arr){
+        return mergesort(arr);
     }
 
     // TODO
