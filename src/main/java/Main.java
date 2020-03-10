@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args){
         // Sorting.test(100, SEED);
         // Searching.test(10, SEED);
-        DataStructureTester.testArray();
+        // DataStructureTester.testArray();
+        DataStructureTester.testLinkedList();
     }
 
 

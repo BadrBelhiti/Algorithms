@@ -13,4 +13,18 @@ public class DataStructureTester {
         System.out.println(array.search("Test"));
     }
 
+    public static void testLinkedList(){
+        LinkedList<String> linkedList = new LinkedList<String>();
+        linkedList.addLast("Test");
+        linkedList.addLast("Test2");
+        linkedList.addLast("Test3");
+        linkedList.addLast("Test2");
+        System.out.println(linkedList);
+
+        while (!linkedList.isEmpty()){
+            System.out.println(linkedList.removeFirst());
+        }
+
+    }
+
 }
