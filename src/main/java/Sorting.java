@@ -19,12 +19,66 @@ public class Sorting {
     }
 
     private static int[] testsort(int[] arr){
-        return mergesort(arr);
+        return quicksort(arr, 0, arr.length - 1);
     }
 
-    // TODO
-    public static int[] quicksort(int[] arr){
+    /*
+        Advantageous over mergesort in sorting data structures that allow random access (e.g. arrays).
+        Also takes less space than mergesort. Not preferred when sorting data that is very similar or contains a lot of duplicates.
+        Such a case results in more suboptimal pivots being chosen, moving the time complexity towards O(n^2).
+
+        Best case - O(nlogn)
+        Average case - O(nlogn)
+        Worst case - O(n^2)
+
+     */
+
+    public static int[] quicksort(int[] arr, int start, int end){
+
+        if (start < end){
+
+            int pivot = partition(arr, start, end);
+
+            quicksort(arr, start, pivot - 1);
+            quicksort(arr, pivot + 1, end);
+        }
+
         return arr;
+    }
+
+    private static int partition(int[] arr, int start, int end){
+
+        // Select random pivot
+        int pivot = (int) (Math.random() * (end - start + 1) + start);
+        int pivotValue = arr[pivot];
+
+        // Move pivot to end of array for safekeeping
+        swap(arr, pivot, end);
+
+        int smallElementsTail = start;
+
+        // Loop through subarray, moving values smaller than 'pivotValue' to have indices smaller than 'smallElementsTrail'.
+        // This guarantees that all values smaller than the pivot will be left of the pivot, and all values greater than or equal to
+        // the pivot will be right of the pivot.
+        for (int i = start; i < end; i++){
+            if (arr[i] < pivotValue){
+                swap(arr, i, smallElementsTail);
+                smallElementsTail++;
+            }
+        }
+
+        // Move pivot back. Pivot is now in its final and correct position in the sorted array.
+        // Remember that the pivot is now sitting in index 'end' from the first swap.
+        swap(arr, end, smallElementsTail);
+
+        // Return index of where the pivot now lies. We can then create subarrays around this index to also sort.
+        return smallElementsTail;
+    }
+
+    private static void swap(int[] arr, int firstIndex, int secondIndex){
+        int temp = arr[firstIndex];
+        arr[firstIndex] = arr[secondIndex];
+        arr[secondIndex] = temp;
     }
 
     /*
@@ -54,7 +108,7 @@ public class Sorting {
     }
 
     /*
-        Practical for smaller arrays.
+        Practical for smaller datasets.
         Best case - O(n)
         Average case - O(n^2)
         Worst case - O(n^2)
@@ -78,7 +132,8 @@ public class Sorting {
     }
 
     /*
-        Fast sub-quadratic general-purpose algorithm.
+        Advantageous over quicksort in sorting datasets where swaps are expensive and random access isn't allowed (e.g. linked lists).
+
         Best case - O(nlogn)
         Average case - O(nlogn)
         Worst case - O(nlogn)

@@ -1,5 +1,7 @@
 package datastructures;
 
+
+
 public class DataStructureTester {
 
     public static void testArray(){
