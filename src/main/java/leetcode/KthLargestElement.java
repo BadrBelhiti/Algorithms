@@ -2,6 +2,12 @@ package leetcode;
 
 public class KthLargestElement {
 
+    /*
+
+    This problem can be solved in O(n) time and O(1) space using the quickselect algorithm.
+
+     */
+
     public static int kthLargestElement(int[] arr, int k){
 
         int low = 0;
