@@ -33,25 +33,33 @@ public class KthLargestElement {
     }
 
 
-    private static int partition(int[] arr, int low, int high){
+    private static int partition(int[] arr, int start, int end){
 
-        int pivot = (int) (Math.random() * (high - low + 1) + low);
+        // Select random pivot
+        int pivot = (int) (Math.random() * (end - start + 1) + start);
         int pivotValue = arr[pivot];
 
-        swap(arr, pivot, high);
+        // Move pivot to end of array for safekeeping
+        swap(arr, pivot, end);
 
-        int smallestElementTail = low;
+        int smallElementsTail = start;
 
-        for (int i = low; i < high; i++){
+        // Loop through subarray, moving values smaller than 'pivotValue' to have indices smaller than 'smallElementsTrail'.
+        // This guarantees that all values smaller than the pivot will be left of the pivot, and all values greater than or equal to
+        // the pivot will be right of the pivot.
+        for (int i = start; i < end; i++){
             if (arr[i] < pivotValue){
-                swap(arr, i, smallestElementTail);
-                smallestElementTail++;
+                swap(arr, i, smallElementsTail);
+                smallElementsTail++;
             }
         }
 
-        swap(arr, high, smallestElementTail);
+        // Move pivot back. Pivot is now in its final and correct position in the sorted array.
+        // Remember that the pivot is now sitting in index 'end' from the first swap.
+        swap(arr, end, smallElementsTail);
 
-        return smallestElementTail;
+        // Return index of where the pivot now lies. We can then create subarrays around this index to also sort.
+        return smallElementsTail;
     }
 
     private static void swap(int[] arr, int a, int b){
