@@ -1,3 +1,4 @@
+import datastructures.DataStructureTester;
 import leetcode.KthLargestElement;
 
 public class Main {
@@ -9,6 +10,8 @@ public class Main {
         // Searching.test(10, SEED);
         // DataStructureTester.testArray();
         // DataStructureTester.testLinkedList();
+
+        DataStructureTester.testBST();
     }
 
 }

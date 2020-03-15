@@ -23,10 +23,21 @@ public class DataStructureTester {
         linkedList.addLast("Test2");
         System.out.println(linkedList);
 
-        while (!linkedList.isEmpty()){
+        while (!linkedList.isEmpty()) {
             System.out.println(linkedList.removeFirst());
         }
+    }
 
+    public static void testBST(){
+
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+        bst.add(0);
+        bst.add(2);
+        bst.add(-4);
+        bst.add(45);
+        bst.add(3);
+        bst.add(3);
+        System.out.println(bst);
     }
 
 }

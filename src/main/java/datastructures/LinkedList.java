@@ -1,10 +1,6 @@
 package datastructures;
 
-public class LinkedList<T> {
-
-    private ListNode<T> head;
-
-    /*
+/*
         A linked list is a data structure where each node
         directly points to the next node in the linked list.
         This class implements a singly linked list
@@ -21,8 +17,13 @@ public class LinkedList<T> {
         Note: The above time complexities are assuming that only the head (first) node is
         stored for reference. If a reference of the tail (last) node is also stored, then
         addLast(...) and removeLast(...) would also be of order O(1).
+*/
 
-     */
+
+
+public class LinkedList<T> {
+
+    private ListNode<T> head;
 
     public void addLast(T val){
         ListNode<T> node = new ListNode<T>(val);

@@ -1,20 +1,21 @@
 package datastructures;
 
-public class Array<T> {
-
-    private static final int INITIAL_SIZE = 8;
-
-    private T[] array = (T[]) new Object[INITIAL_SIZE];
-    private int size = 0;
-
-    /*
+/*
         Remaking of ArrayList class.
         add(...) - amortized O(1)
         remove(...) - O(n)
         get(...) - O(1)
         search(...) - O(n)
         contains(...) - O(n)
-     */
+*/
+
+
+public class Array<T> {
+
+    private static final int INITIAL_SIZE = 8;
+
+    private T[] array = (T[]) new Object[INITIAL_SIZE];
+    private int size = 0;
 
 
     public void add(T element){
