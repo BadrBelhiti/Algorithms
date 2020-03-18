@@ -84,6 +84,24 @@ public class BinarySearchTree<T extends Comparable<T>> {
         inorder(node.right, acc);
     }
 
+    private void preorder(TreeNode<T> node, List<T> acc){
+        if (node == null){
+            return;
+        }
+        acc.add(node.val);
+        preorder(node.left, acc);
+        preorder(node.right, acc);
+    }
+
+    private void postorder(TreeNode<T> node, List<T> acc){
+        if (node == null){
+            return;
+        }
+        postorder(node.left, acc);
+        postorder(node.right, acc);
+        acc.add(node.val);
+    }
+
     public String toString(){
         List<T> res = new ArrayList<>();
         inorder(root, res);
