@@ -21,6 +21,8 @@ public class DataStructureTester {
         linkedList.addLast("Test2");
         linkedList.addLast("Test3");
         linkedList.addLast("Test2");
+        System.out.println(linkedList.contains("test"));
+        System.out.println(linkedList.contains("Test"));
         System.out.println(linkedList);
 
         while (!linkedList.isEmpty()) {

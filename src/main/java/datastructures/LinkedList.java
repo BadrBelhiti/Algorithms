@@ -49,6 +49,18 @@ public class LinkedList<T> {
         return val;
     }
 
+    public boolean contains(T val){
+        ListNode<T> curr = head;
+
+        while (curr != null){
+            if (curr.val == val){
+                return true;
+            }
+            curr = curr.next;
+        }
+        return false;
+    }
+
     public boolean isEmpty(){
         return head == null;
     }
