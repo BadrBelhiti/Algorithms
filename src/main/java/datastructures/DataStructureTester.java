@@ -39,6 +39,8 @@ public class DataStructureTester {
         bst.add(45);
         bst.add(3);
         bst.add(3);
+        bst.add(2);
+        bst.add(5);
         System.out.println(bst);
     }
 
