@@ -9,9 +9,10 @@ public class Main {
         // Sorting.test(100, SEED);
         // Searching.test(10, SEED);
         // DataStructureTester.testArray();
-        DataStructureTester.testLinkedList();
+        // DataStructureTester.testLinkedList();
 
         // DataStructureTester.testBST();
+        DataStructureTester.test2DBST();
     }
 
 }
