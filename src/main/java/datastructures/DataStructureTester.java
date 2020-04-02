@@ -51,7 +51,7 @@ public class DataStructureTester {
 
     public static void test2DBST(){
 
-        Random random = new Random(3);
+        Random random = new Random(20);
         TwoDimensionalBST twoDimensionalBST = new TwoDimensionalBST();
 
 
