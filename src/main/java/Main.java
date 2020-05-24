@@ -1,4 +1,5 @@
 import datastructures.DataStructureTester;
+import leetcode.IntervalListIntersections;
 import leetcode.KthLargestElement;
 
 public class Main {
@@ -12,7 +13,8 @@ public class Main {
         // DataStructureTester.testLinkedList();
 
         // DataStructureTester.testBST();
-        DataStructureTester.test2DBST();
+        // DataStructureTester.test2DBST();
+        new IntervalListIntersections();
     }
 
 }
