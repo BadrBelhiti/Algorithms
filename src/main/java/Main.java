@@ -14,7 +14,7 @@ public class Main {
 
         // DataStructureTester.testBST();
         // DataStructureTester.test2DBST();
-        new IntervalListIntersections();
+        IntervalListIntersections.test();
     }
 
 }

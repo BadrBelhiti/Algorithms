@@ -6,7 +6,7 @@ import java.util.List;
 
 public class IntervalListIntersections {
 
-    public IntervalListIntersections(){
+    public static void test(){
         int[][] a = new int[][]{new int[]{0,2}, new int[]{5,10}, new int[]{13,23}, new int[]{24,25}};
         int[][] b = new int[][]{new int[]{1,5}, new int[]{8,12}, new int[]{15,24}, new int[]{25,26}};
 
@@ -14,7 +14,7 @@ public class IntervalListIntersections {
         System.out.println(Arrays.deepToString(intervalIntersection(a, b)));
     }
 
-    public int[][] intervalIntersection(int[][] A, int[][] B) {
+    public static int[][] intervalIntersection(int[][] A, int[][] B) {
 
         if (A.length == 0 || B.length == 0){
             return new int[][]{};
@@ -43,11 +43,11 @@ public class IntervalListIntersections {
         return list.toArray(new int[list.size()][]);
     }
 
-    public boolean overlaps(int[] a, int[] b){
+    public static boolean overlaps(int[] a, int[] b){
         return !(a[1] < b[0] || a[0] > b[1]);
     }
 
-    public int[] findOverlap(int[] a, int[] b){
+    public static int[] findOverlap(int[] a, int[] b){
         return new int[]{Math.max(a[0], b[0]), Math.min(a[1], b[1])};
     }
 
