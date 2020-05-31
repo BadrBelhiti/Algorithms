@@ -1,15 +1,14 @@
 package leetcode;
 
+import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class KClosestPointsToOrigin {
 
     public int[][] kClosest(int[][] points, int K) {
-        PriorityQueue<int[]> sorted = new PriorityQueue<>((a, b) -> (compare(a, b)));
+        PriorityQueue<int[]> sorted = new PriorityQueue<>(this::compare);
 
-        for (int[] point : points){
-            sorted.add(point);
-        }
+        sorted.addAll(Arrays.asList(points));
 
         int[][] res = new int[K][];
 
